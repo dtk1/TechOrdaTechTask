@@ -15,11 +15,15 @@ class Cinema:
         print(f"Movie was successfully added the ID is {movie_id}")  
      
     def show_Movies(self):
-        k = 1
+        k = 0
         for i in self.movies:
             print(f"{k}.{i}")
             k+=1
-
+    def show_Users(self):
+        j = 0
+        for i in self.users:
+            print(f"{j}.{i}")
+            j+=1
     def add_Users(self, user_name):
          self.users.append(user_name)
          user_id = self.next_idUsers
@@ -50,8 +54,9 @@ def displayMenu():
         print("1. Добавить новый фильм ")
         print("2. Показать все доступные фильмы ")
         print("3. Добавить нового пользователя ")
-        print("4. Купить билет ")
-        print("5. Отменить покупку билета ")
+        print("4. Показать всех доступных пользователей ")
+        print("5. Купить билет ")
+        print("6. Отменить покупку билета ")
 
 my_cinema = Cinema()
 while True:
@@ -68,10 +73,13 @@ while True:
          addname = input("Input name of the user: ")
          my_cinema.add_Users(addname)
     if choice == "4":
+         my_cinema.show_Users()
+    if choice == "5":
          addIdUser = input("Input id of the user: ")
          addId = input("Input id of the film: ")
          my_cinema.buy_Tickets(addIdUser, addId)
-    if choice == "5":
+    if choice == "6":
          ticketid = input("Input ticketid you want to cancel: ")
          my_cinema.cancel_Tickets(ticketid)
+    
     
