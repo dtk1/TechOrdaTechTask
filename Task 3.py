@@ -1,4 +1,5 @@
 class Cinema:
+    
     def __init__(self):
         self.users = []
         self.movies = []
